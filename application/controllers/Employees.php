@@ -1,9 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Employees extends CI_Controller {
+class Employees extends CI_Controller
+{
 
-	public function __construct() {
+	public function __construct()
+	{
 		parent::__construct();
 
 		// set_time_limit(2000000);
@@ -14,10 +16,8 @@ class Employees extends CI_Controller {
 		$password = $this->session->userdata('vUserPassword');
 
 		if (($username == NULL) && ($password == NULL)) {
-			echo '<script> parent.window.location=\''.base_url().'login'.'\';</script>';
-
+			echo '<script> parent.window.location=\'' . base_url() . 'login' . '\';</script>';
 		}
-		
 	}
 
 
@@ -38,22 +38,37 @@ class Employees extends CI_Controller {
 	 */
 	public function index()
 	{
-        $data['getemployee'] = $this->Employees_model->getEmployees();
 
 
-        // $data['getemployee'] = '{"message" : "", "success": true, "result": "[]"}';
+		$hrisID = $this->input->post("hrisID");
+		$phicCode = $this->input->post("officeID");
+		$lname = $this->input->post("lname");
+		$fname = $this->input->post("fname");
 
-		// $this->load->view('templates/header');
-		// $this->load->view('templates/sidebar');
-		// $this->load->view('templates/employees/employees_table',$data);
-		// // $this->load->view('templates/sharedTable/table');
-		// $this->load->view('templates/footer');
+		if ($hrisID != "" ||  $phicCode != "" || $lname != "" || $fname != "") {
 
-		
+
+			$employeeSearchResult = $this->Employees_model->searchEmployees($hrisID, $phicCode, $lname,  $fname);
+			if ($employeeSearchResult->success) {
+				$data['getemployee'] = $employeeSearchResult;
+			} else {
+				$data['getemployee'] = json_decode('{"message" : "no record found", "success": false, "result": "[]"}');
+			}
+		} else {
+			$data['getemployee'] = json_decode('{"message" : "no record found", "success": false, "result": "[]"}');
+		}
+
+
+		$data['vHrisID'] = $hrisID;
+		$data['vPhicCode'] = $phicCode;
+		$data['vLname'] = $lname;
+		$data['vFname'] = $fname;
+
+
 		$this->load->view('templates/sharedTemplates/header');
 		$this->load->view('templates/sharedTemplates/sidebar');
 		// content view
-		$this->load->view('templates/employees/employees_table',$data);
+		$this->load->view('templates/employees/employees_table', $data);
 		$this->load->view('templates/sharedTemplates/footer');
 	}
 
@@ -77,6 +92,4 @@ class Employees extends CI_Controller {
 		// // $this->load->view('templates/sharedTable/table');
 		// $this->load->view('templates/footer');
 	}
-
-
 }

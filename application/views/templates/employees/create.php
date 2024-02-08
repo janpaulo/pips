@@ -3,16 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css" />
 
 
     <style>
-    .bs-stepper .step-trigger {
-        padding: 20px 0 !important;
-    }
+        .bs-stepper .step-trigger {
+            padding: 20px 0 !important;
+        }
     </style>
 </head>
 
@@ -25,48 +24,42 @@
                     <div id="stepper1" class="bs-stepper">
                         <div class="bs-stepper-header" role="tablist">
                             <div class="step" data-target="#test-l-1">
-                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger1"
-                                    aria-controls="test-l-1">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger1" aria-controls="test-l-1">
                                     <span class="bs-stepper-circle">1</span>
                                     <span class="bs-stepper-label">Personal Information</span>
                                 </button>
                             </div>
                             <div class="bs-stepper-line"></div>
                             <div class="step" data-target="#test-l-2">
-                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger2"
-                                    aria-controls="test-l-2">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger2" aria-controls="test-l-2">
                                     <span class="bs-stepper-circle">2</span>
                                     <span class="bs-stepper-label">Family Background</span>
                                 </button>
                             </div>
                             <div class="bs-stepper-line"></div>
                             <div class="step" data-target="#test-l-3">
-                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger3"
-                                    aria-controls="test-l-3">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger3" aria-controls="test-l-3">
                                     <span class="bs-stepper-circle">3</span>
                                     <span class="bs-stepper-label">Educational Background</span>
                                 </button>
                             </div>
                             <div class="bs-stepper-line"></div>
                             <div class="step" data-target="#test-l-4">
-                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger4"
-                                    aria-controls="test-l-4">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger4" aria-controls="test-l-4">
                                     <span class="bs-stepper-circle">4</span>
                                     <span class="bs-stepper-label">Eligibility</span>
                                 </button>
                             </div>
                             <div class="bs-stepper-line"></div>
                             <div class="step" data-target="#test-l-5">
-                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger5"
-                                    aria-controls="test-l-5">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger5" aria-controls="test-l-5">
                                     <span class="bs-stepper-circle">5</span>
                                     <span class="bs-stepper-label">Work Experience</span>
                                 </button>
                             </div>
                             <div class="bs-stepper-line"></div>
                             <div class="step" data-target="#test-l-6">
-                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger6"
-                                    aria-controls="test-l-6">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger6" aria-controls="test-l-6">
                                     <span class="bs-stepper-circle">6</span>
                                     <span class="bs-stepper-label">Training / Seminar</span>
                                 </button>
@@ -75,28 +68,24 @@
                         <div class="bs-stepper-content">
                             <form onSubmit="return false">
                                 <!-- Personal Information -->
-                                <div id="test-l-1" role="tabpanel" class="bs-stepper-pane"
-                                    aria-labelledby="stepper1trigger1">
+                                <div id="test-l-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger1">
                                     <div class="form-group">
                                         <div class="row g-3">
                                             <div class="col-md-3">
-                                                <label for="Lastname" class="form-label" require>Lastname*</label>
-                                                <input type="text" class="form-control" id="Lastname" name="lastname"
-                                                    require>
+                                                <label for="Lastname" class="form-label" require>Last Name*</label>
+                                                <input type="text" class="form-control" id="lastname" name="lastname" require>
                                             </div>
                                             <div class="col-md-3">
-                                                <label for="Firstname" class="form-label">Firstname* </label>
-                                                <input type="text" class="form-control" id="Firstname" name="firstname"
-                                                    require>
+                                                <label for="Firstname" class="form-label">First Name* </label>
+                                                <input type="text" class="form-control" id="firstname" name="firstname" require>
                                             </div>
                                             <div class="col-md-3">
-                                                <label for="Middlename" class="form-label">Middlename</label>
-                                                <input type="text" class="form-control" name="middlename"
-                                                    id="Middlename">
+                                                <label for="Middlename" class="form-label">Middle Name</label>
+                                                <input type="text" class="form-control" name="middlename" id="Middlename">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="Extension" class="form-label">Extension (JR, SR)</label>
-                                                <input type="text" class="form-control" name="extanme" id="Extension">
+                                                <input type="text" class="form-control" name="extanme" id="extanme">
                                             </div>
                                         </div>
 
@@ -109,22 +98,19 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="birthplace" class="form-label">Place of Birth*</label>
-                                                <input type="text" class="form-control" id="birthplace"
-                                                    name="place-birth">
+                                                <input type="text" class="form-control" id="birthplace" name="place-birth">
                                             </div>
                                             <div class="col-md-3">
                                                 <legend class="col-form-label col-sm-2 pt-0">Gender*</legend>
                                                 <div class="col-md-10">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio"
-                                                            name="flexRadioDefault" id="flexRadioDefault1" checked>
-                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                        <input class="form-check-input" type="radio" name="gender" id="male" checked>
+                                                        <label class="form-check-label" for="male">
                                                             Male
                                                         </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio"
-                                                            name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <input class="form-check-input" type="radio" name="gender" id="female">
                                                         <label class="form-check-label" for="flexRadioDefault2">
                                                             Female
                                                         </label>
@@ -133,7 +119,7 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="cbcivil" class="form-label">Civil Status*</label>
-                                                <select id="cbcivil" class="form-select" name="civil-status">
+                                                <select id="civilstatus" class="form-select" name="civilstatus">
                                                     <option selected>Choose...</option>
                                                     <option>Single</option>
                                                     <option>Widowed</option>
@@ -146,11 +132,11 @@
                                         <div class="row g-3">
                                             <div class="col-md-3">
                                                 <label for="Height" class="form-label">Height(m)</label>
-                                                <input type="text" class="form-control" id="Height" name="height">
+                                                <input type="number" class="form-control" id="height" name="height">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="Weight" class="form-label">Weight(kg)</label>
-                                                <input type="text" class="form-control" id="Weight" name="weight">
+                                                <input type="number" class="form-control" id="weight" name="weight">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="Blood" class="form-label">Blood Type</label>
@@ -158,33 +144,32 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="GSIS" class="form-label">GSIS ID NO.</label>
-                                                <input type="text" class="form-control" id="GSIS" name="gsis">
+                                                <input type="text" class="form-control" id="gsis" name="gsis">
                                             </div>
                                         </div>
 
                                         <div class="row g-3">
                                             <div class="col-md-3">
                                                 <label for="pagibig" class="form-label">PAG-IBIG ID NO.</label>
-                                                <input type="text" class="form-control" id="pagibig" name="pagibig">
+                                                <input type="number" class="form-control" id="pagibig" name="pagibig">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="PHILHEALTH" class="form-label">PHILHEALTH NO.</label>
-                                                <input type="text" class="form-control" id="PHILHEALTH"
-                                                    name="philhealth">
+                                                <input type="number" class="form-control" id="philhealth" name="philhealth">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="SSS" class="form-label">SSS NO.</label>
-                                                <input type="text" class="form-control" id="SSS" name="sss">
+                                                <input type="number" class="form-control" id="sss" name="sss">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="TIN" class="form-label">TIN NO.</label>
-                                                <input type="text" class="form-control" id="TIN" name="tin">
+                                                <input type="number" class="form-control" id="tin" name="tin" maxlength="2" >
                                             </div>
                                         </div>
                                         <div class="row g-3">
                                             <div class="col-md-3">
                                                 <label for="pagibig" class="form-label">Agency Employee No.</label>
-                                                <input type="text" class="form-control" id="ageEmpNo" name="ageEmpNo">
+                                                <input type="text" class="form-control" id="agencyEmpNo" name="agencyEmpNo">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="txtcitizenship" class="form-label">Citizenship*</label>
@@ -194,26 +179,35 @@
                                                     <option>Dual Citizenship</option>
                                                 </select>
                                             </div>
+                                            <div class="col-md-3">
+                                                <label for="txtcitizenship" class="form-label">Position*</label>
+                                                <select id="txtcitizenship" class="form-select" name="citizenship">
+                                                    <option selected>Choose...</option>
+                                                    <option>Filipino</option>
+                                                    <option>Dual Citizenship</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="col-md-3">
+                                                <label for="pagibig" class="form-label">Bank Account No.</label>
+                                                <input type="number" class="form-control" id="agencyEmpNo" name="agencyEmpNo">
+                                            </div>
                                         </div>
-
-                                        <h4>RESIDENTIAL ADDRESS </h4>
+                                        <hr>
+                                        <h5>PRESENT ADDRESS </h5>
                                         <hr>
                                         <div class="row g-3">
                                             <div class="col-md-2">
                                                 <label for="inputAddress" class="form-label">House/Block/Lot No.</label>
-                                                <input type="text" class="form-control" id="inputAddress"
-                                                    placeholder="Apartment, studio, or floor" name="address">
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="address">
                                             </div>
                                             <div class="col-md-2">
                                                 <label for="inputAddress" class="form-label">Street</label>
-                                                <input type="text" class="form-control" id="inputAddress"
-                                                    placeholder="1234 Main St" name="address">
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
                                             </div>
                                             <div class="col-md-4">
-                                                <label for="inputAddress2"
-                                                    class="form-label">Subdivision/Village</label>
-                                                <input type="text" class="form-control" id="inputAddress2"
-                                                    placeholder="" name="address2">
+                                                <label for="inputAddress2" class="form-label">Subdivision/Village</label>
+                                                <input type="text" class="form-control" id="inputAddress2" placeholder="" name="address2">
                                             </div>
                                             <div class="col-md-4">
                                                 <label for="inputProvince" class="form-label">Barangay</label>
@@ -247,26 +241,35 @@
                                             </div>
 
                                         </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h5>PERMANENT ADDRESS </h5>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                       <b> Check if same as Present Address</b> 
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
-                                        <h4>PERMANENT ADDRESS </h4>
                                         <hr>
                                         <div class="row g-3">
                                             <div class="col-md-2">
                                                 <label for="inputAddress" class="form-label">House/Block/Lot No.</label>
-                                                <input type="text" class="form-control" id="inputAddress"
-                                                    placeholder="Apartment, studio, or floor" name="address">
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="address">
                                             </div>
                                             <div class="col-md-2">
                                                 <label for="inputAddress" class="form-label">Street</label>
-                                                <input type="text" class="form-control" id="inputAddress"
-                                                    placeholder="1234 Main St" name="address">
+                                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
                                             </div>
                                             <div class="col-md-4">
-                                                <label for="inputAddress2"
-                                                    class="form-label">Subdivision/Village</label>
-                                                <input type="text" class="form-control" id="inputAddress2"
-                                                    placeholder="" name="address2">
+                                                <label for="inputAddress2" class="form-label">Subdivision/Village</label>
+                                                <input type="text" class="form-control" id="inputAddress2" placeholder="" name="address2">
                                             </div>
                                             <div class="col-md-4">
                                                 <label for="inputProvince" class="form-label">Barangay</label>
@@ -323,10 +326,9 @@
                                     <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
                                 </div>
                                 <!-- Family -->
-                                <div id="test-l-2" role="tabpanel" class="bs-stepper-pane"
-                                    aria-labelledby="stepper1trigger2">
+                                <div id="test-l-2" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">
                                     <div class="form-group">
-                                        <div class="row g-3" style="margin-bottom: 20px;">
+                                        <div class="row g-3  align-items-end" style="margin-bottom: 20px;">
                                             <div class="col-md-3">
                                                 <label for="txtSpouseS" class="form-label">Spouse's Surname</label>
                                                 <input type="text" class="form-control" id="txtSpouseS">
@@ -348,14 +350,12 @@
 
                                             <div class="col-md-3">
                                                 <label for="txtSpouseS" class="form-label">Occupation</label>
-                                                <input type="text" class="form-control" id="occupation"
-                                                    name="occupation">
+                                                <input type="text" class="form-control" id="occupation" name="occupation">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="txtSpouseF" class="form-label">Employer/Business
                                                     Name</label>
-                                                <input type="text" class="form-control" id="empyer-name"
-                                                    name="empyer-name">
+                                                <input type="text" class="form-control" id="empyer-name" name="empyer-name">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="txtSpouseM" class="form-label">Business Address</label>
@@ -403,21 +403,24 @@
                                             </div>
 
 
-                                            <div class="col-md-6">
-                                                <label for="txtSpouseF" class="form-label"><b>Name of CHILDREN(Write
-                                                        full name
-                                                        and list all)</b></label>
-                                                <input type="text" class="form-control" id="children" name="children">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="chilBirth" class="form-label">Date of birth</label>
-                                                <input type="date" class="form-control" id="chilBirth" name="chilBirth">
+                                            <div class="mb-3 input-group repeatDiv" id="repeatDiv">
+                                                <div class="col-md-6">
+                                                    <label for="txtSpouseF" class="form-label"><b>Name of CHILDREN(Write
+                                                            full name
+                                                            and list all)</b></label>
+                                                    <input type="text" class="form-control" id="children" name="children[]">
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <label for="chilBirth" class="form-label">Date of birth</label>
+                                                    <input type="date" class="form-control" id="chilBirth" name="chilBirth[]">
+                                                </div>
                                             </div>
 
-
+                                            <!-- <button type="button" class="btn btn-info" id="repeatDivBtn" data-increment="1">Add More Input</button> -->
+                                            
                                             <div class="row g-3" style=" text-align-last: left;">
                                                 <div class="col-12">
-                                                    <button type="button" class="btn btn-primary">Add Siblings</button>
+                                                    <button type="button" class="btn btn-info" id="repeatDivBtn" data-increment="1">Add Siblings</button>
                                                 </div>
 
 
@@ -429,8 +432,7 @@
                                     <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
                                 </div>
                                 <!-- education -->
-                                <div id="test-l-3" role="tabpanel" class="bs-stepper-pane"
-                                    aria-labelledby="stepper1trigger2">
+                                <div id="test-l-3" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">
                                     <div class="form-group">
                                         <h5>Elementary Level</h5>
                                         <div class="row g-3">
@@ -470,14 +472,12 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <label for="ElemYear" class="form-label">Year Graduated</label>
-                                                <input type="text" class="form-control" id="ElemYear"
-                                                    placeholder="Year Graduated">
+                                                <input type="text" class="form-control" id="ElemYear" placeholder="Year Graduated">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="elemHonor" class="form-label">Scholarship/Academic Honor
                                                     Received</label>
-                                                <input type="text" class="form-control" id="elemHonor"
-                                                    placeholder="Honor Receieved">
+                                                <input type="text" class="form-control" id="elemHonor" placeholder="Honor Receieved">
                                             </div>
                                         </div>
 
@@ -521,14 +521,12 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <label for="ElemYear" class="form-label">Year Graduated</label>
-                                                <input type="text" class="form-control" id="ElemYear"
-                                                    placeholder="Year Graduated">
+                                                <input type="text" class="form-control" id="ElemYear" placeholder="Year Graduated">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="elemHonor" class="form-label">Scholarship/Academic Honor
                                                     Received</label>
-                                                <input type="text" class="form-control" id="elemHonor"
-                                                    placeholder="Honor Receieved">
+                                                <input type="text" class="form-control" id="elemHonor" placeholder="Honor Receieved">
                                             </div>
                                         </div>
 
@@ -572,14 +570,12 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <label for="ElemYear" class="form-label">Year Graduated</label>
-                                                <input type="text" class="form-control" id="ElemYear"
-                                                    placeholder="Year Graduated">
+                                                <input type="text" class="form-control" id="ElemYear" placeholder="Year Graduated">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="elemHonor" class="form-label">Scholarship/Academic Honor
                                                     Received</label>
-                                                <input type="text" class="form-control" id="elemHonor"
-                                                    placeholder="Honor Receieved">
+                                                <input type="text" class="form-control" id="elemHonor" placeholder="Honor Receieved">
                                             </div>
                                         </div>
 
@@ -623,14 +619,12 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <label for="ElemYear" class="form-label">Year Graduated</label>
-                                                <input type="text" class="form-control" id="ElemYear"
-                                                    placeholder="Year Graduated">
+                                                <input type="text" class="form-control" id="ElemYear" placeholder="Year Graduated">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="elemHonor" class="form-label">Scholarship/Academic Honor
                                                     Received</label>
-                                                <input type="text" class="form-control" id="elemHonor"
-                                                    placeholder="Honor Receieved">
+                                                <input type="text" class="form-control" id="elemHonor" placeholder="Honor Receieved">
                                             </div>
                                         </div>
 
@@ -674,14 +668,12 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <label for="ElemYear" class="form-label">Year Graduated</label>
-                                                <input type="text" class="form-control" id="ElemYear"
-                                                    placeholder="Year Graduated">
+                                                <input type="text" class="form-control" id="ElemYear" placeholder="Year Graduated">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="elemHonor" class="form-label">Scholarship/Academic Honor
                                                     Received</label>
-                                                <input type="text" class="form-control" id="elemHonor"
-                                                    placeholder="Honor Receieved">
+                                                <input type="text" class="form-control" id="elemHonor" placeholder="Honor Receieved">
                                             </div>
                                         </div>
                                     </div>
@@ -689,13 +681,28 @@
                                     <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
                                 </div>
                                 <!-- civil -->
-                                <div id="test-l-4" role="tabpanel" class="bs-stepper-pane"
-                                    aria-labelledby="stepper1trigger2">
+                                <div id="test-l-4" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">
                                     <div class="form-group">
                                         <div class="row g-3" style="color: red; font-style: italic;">
                                             <h6>Notes: Career Service/ RA 1080 (Board/BAR) Under Special Laws/ CES/ CEE/
                                                 Barangay Eligibility/ Driver's License</h6>
                                         </div>
+
+
+<!-- 
+                                        <table class="table">
+                                            <tr>
+                                                <th>Eligibility Title</th>
+                                                <th>Rating</th>
+                                                <th>Date of Examination/ Conferment</th>
+                                                <th>Place of Examination/ Conferment</th>
+                                                <th>LICENSE Number (if applicable)</th>
+                                                <th>Date of Validity</th>
+                                            </tr>
+                                        </table> -->
+
+
+
                                         <div class="row g-3 align-items-end">
                                             <div class="col-md-4">
                                                 <label for="Lastname" class="form-label">Eligibility Title</label>
@@ -736,6 +743,10 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
+
+
                                         <div class="row g-3" style=" text-align-last: left; margin-top: 10px;">
                                             <div class="col-12">
                                                 <button type="button" class="btn btn-primary">Add Eligibility</button>
@@ -746,8 +757,7 @@
                                     <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
                                 </div>
                                 <!-- work -->
-                                <div id="test-l-5" role="tabpanel" class="bs-stepper-pane"
-                                    aria-labelledby="stepper1trigger2">
+                                <div id="test-l-5" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">
                                     <div class="form-group">
 
                                         <div class="row g-3" style="color: red; font-style: italic;">
@@ -793,8 +803,7 @@
                                     <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
                                 </div>
                                 <!-- trainings -->
-                                <div id="test-l-6" role="tabpanel" class="bs-stepper-pane "
-                                    aria-labelledby="stepper1trigger6">
+                                <div id="test-l-6" role="tabpanel" class="bs-stepper-pane " aria-labelledby="stepper1trigger6">
                                     <div class="form-group">
 
                                         <div class="row g-3" style="color: red; font-style: italic;">
@@ -922,65 +931,63 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
     <script>
-    /* globals Stepper:false */
+        /* globals Stepper:false */
 
-    (function() {
-        'use strict'
+        (function() {
+            'use strict'
 
-        window.stepper1 = new Stepper(document.querySelector('#stepper1'))
-        window.stepper2 = new Stepper(document.querySelector('#stepper2'), {
-            linear: false
-        })
-        window.stepper3 = new Stepper(document.querySelector('#stepper3'), {
-            linear: false,
-            animation: true
-        })
-        window.stepper4 = new Stepper(document.querySelector('#stepper4'))
-
-        var stepperFormEl = document.querySelector('#stepperForm')
-        window.stepperForm = new Stepper(stepperFormEl, {
-            animation: true
-        })
-
-        var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'))
-        var stepperPanList = [].slice.call(stepperFormEl.querySelectorAll('.bs-stepper-pane'))
-        var inputMailForm = document.getElementById('inputMailForm')
-        var inputPasswordForm = document.getElementById('inputPasswordForm')
-        var form = stepperFormEl.querySelector('.bs-stepper-content form')
-
-        btnNextList.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                window.stepperForm.next()
+            window.stepper1 = new Stepper(document.querySelector('#stepper1'))
+            window.stepper2 = new Stepper(document.querySelector('#stepper2'), {
+                linear: false
             })
-        })
+            window.stepper3 = new Stepper(document.querySelector('#stepper3'), {
+                linear: false,
+                animation: true
+            })
+            window.stepper4 = new Stepper(document.querySelector('#stepper4'))
 
-        stepperFormEl.addEventListener('show.bs-stepper', function(event) {
-            form.classList.remove('was-validated')
-            var nextStep = event.detail.indexStep
-            var currentStep = nextStep
+            var stepperFormEl = document.querySelector('#stepperForm')
+            window.stepperForm = new Stepper(stepperFormEl, {
+                animation: true
+            })
 
-            if (currentStep > 0) {
-                currentStep--
-            }
+            var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'))
+            var stepperPanList = [].slice.call(stepperFormEl.querySelectorAll('.bs-stepper-pane'))
+            var inputMailForm = document.getElementById('inputMailForm')
+            var inputPasswordForm = document.getElementById('inputPasswordForm')
+            var form = stepperFormEl.querySelector('.bs-stepper-content form')
 
-            var stepperPan = stepperPanList[currentStep]
+            btnNextList.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    window.stepperForm.next()
+                })
+            })
 
-            if ((stepperPan.getAttribute('id') === 'test-form-1' && !inputMailForm.value.length) ||
-                (stepperPan.getAttribute('id') === 'test-form-2' && !inputPasswordForm.value.length)) {
-                event.preventDefault()
-                form.classList.add('was-validated')
-            }
-        })
-    })();
+            stepperFormEl.addEventListener('show.bs-stepper', function(event) {
+                form.classList.remove('was-validated')
+                var nextStep = event.detail.indexStep
+                var currentStep = nextStep
+
+                if (currentStep > 0) {
+                    currentStep--
+                }
+
+                var stepperPan = stepperPanList[currentStep]
+
+                if ((stepperPan.getAttribute('id') === 'test-form-1' && !inputMailForm.value.length) ||
+                    (stepperPan.getAttribute('id') === 'test-form-2' && !inputPasswordForm.value.length)) {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                }
+            })
+        })();
     </script>
 </body>
 

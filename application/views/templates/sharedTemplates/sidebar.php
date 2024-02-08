@@ -97,12 +97,58 @@
 
 
                 <!-- EmployeeRole -->
+                
                 <li class="nav-item"  id="EmployeeRole-profile">
                     <a href="<?php echo base_url();?>myprofile/my_profile" class="nav-link"> <i
                             class="fas fa-user nav-icon"></i>
-                        <p> Profile</p>
+                        <p> My Profile</p>
                     </a>
                 </li>
+
+                <li class="nav-item"  id="EmployeeRole-profile">
+                    <a href="<?php echo base_url();?>/family_background" class="nav-link"> <i
+                            class="fas fa-user nav-icon"></i>
+                        <p> Family Background</p>
+                    </a>
+                </li>
+                <li class="nav-item"  id="EmployeeRole-profile">
+                    <a href="<?php echo base_url();?>/education" class="nav-link"> <i
+                            class="fas fa-user nav-icon"></i>
+                        <p> Education</p>
+                    </a>
+                </li>
+                <li class="nav-item"  id="EmployeeRole-profile">
+                    <a href="<?php echo base_url();?>/employee_eligibilities" class="nav-link"> <i
+                            class="fas fa-user nav-icon"></i>
+                        <p> Eligibility</p>
+                    </a>
+                </li>
+                <li class="nav-item"  id="EmployeeRole-profile">
+                    <a href="<?php echo base_url();?>/employee_trainings" class="nav-link"> <i
+                            class="fas fa-user nav-icon"></i>
+                        <p> Trainings</p>
+                    </a>
+                </li>
+                <li class="nav-item"  id="EmployeeRole-profile">
+                    <a href="<?php echo base_url();?>/work_experiences" class="nav-link"> <i
+                            class="fas fa-user nav-icon"></i>
+                        <p> Work Experience</p>
+                    </a>
+                </li>
+                <li class="nav-item"  id="EmployeeRole-profile">
+                    <a href="<?php echo base_url();?>/voluntary_work" class="nav-link"> <i
+                            class="fas fa-user nav-icon"></i>
+                        <p> Voluntary Work</p>
+                    </a>
+                </li>
+                <li class="nav-item"  id="EmployeeRole-profile">
+                    <a href="<?php echo base_url();?>/other_info" class="nav-link"> <i
+                            class="fas fa-user nav-icon"></i>
+                        <p> Other Information </p>
+                    </a>
+                </li>
+
+
                 <li class="nav-item" id="EmployeeRole-dtr">
                     <a href="<?php echo base_url();?>myprofile/my_dtr" class="nav-link"> <i
                             class="far fa-circle nav-icon"></i>

@@ -44,7 +44,7 @@ function handleLogin(params) {
               Swal.fire({
               position: 'top-center',
               icon: 'error',
-              title: errorThrown,
+              title: "Internal Server Error",
               showConfirmButton: true
               //timer: 1500
               })
@@ -376,6 +376,7 @@ function mergeObjectsById(objects) {
           // console.log(secondRun)
           // const mergedObjects = mergeObjectsById(newResult);
           console.log(mergeObjectsById(secondRun));
+          console.log("sahdkalhdkahdka djadjkah");
 
         //   bar.then(() => {
 

@@ -123,13 +123,14 @@ function excelFileToJSON(file) {
 			// resultEle.style.display='block';
 
 			var filteredNames = $(result).filter(function (idx) {
-				return result[idx].trminal === 1;
+				return result[idx].terminal_id === 1;
 			});
 
 			var limited = result.filter((val, i) => i < 10);
 
 
-			console.log(result);
+			// console.log(result);
+			generateDtr(result);
 			var bar = new Promise((resolve, reject) => {
 				result.forEach((value, index, array) => {
 					const newobject = {};
@@ -139,22 +140,29 @@ function excelFileToJSON(file) {
 					dateTime.setMinutes(
 						dateTime.getMinutes() + dateTime.getTimezoneOffset()
 					);
-					value.date = date.toLocaleDateString("en-US");
+
+					let year = new Intl.DateTimeFormat('en', { year: '2-digit' }).format(date);
+					let month = new Intl.DateTimeFormat('en', { month: 'short' }).format(date);
+					let day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date);
+					// console.log(`${day}-${month}-${year}`);
+
+					value.date = `${day}-${month}-${year}`;
+					// value.date = date.toLocaleDateString("en-US");
 					value.time_in = dateTime.toLocaleString();
 					value.exact_time = dateTime.toLocaleTimeString();
 
-					if (value.tme_id == 0) {
+					if (value.time_id == 0) {
 						value["checkIn"] = dateTime.toLocaleTimeString();
-					} else if (value.tme_id == 1) {
+					} else if (value.time_id == 1) {
 						value["checkOut"] = dateTime.toLocaleTimeString();
-					} else if (value.tme_id == 2) {
+					} else if (value.time_id == 2) {
 						value["breakOut"] = dateTime.toLocaleTimeString();
-					} else if (value.tme_id == 3) {
+					} else if (value.time_id == 3) {
 						value["breakIn"] = dateTime.toLocaleTimeString();
 					}
-					// newobject['terminal'] = value.trminal;
+					// newobject['terminal'] = value.terminal_id;
 					// newobject['time_in'] = value.time_in;
-					// newobject['tme_id'] = value.tme_id;
+					// newobject['time_id'] = value.time_id;
 					// newobject['emp_id'] = value.emp_id;
 					// newobject['exact_time'] = value.exact_time;
 
@@ -168,11 +176,60 @@ function excelFileToJSON(file) {
 			});
 			// console.log(secondRun)
 			// const mergedObjects = mergeObjectsById(newResult);
-			console.log(mergeObjectsById(secondRun));
+			// console.log(mergeObjectsById(secondRun));
 		};
 	} catch (e) {
 		console.error(e);
 	}
+}
+
+function generateDtr(result) {
+	dataItem = {};
+
+	dataItem.refNo = "212";																													
+	dataItem.dataFile = result;
+	dataItem.dateUploaded = "";
+	dataItem.startPeriod = "";
+	dataItem.endPeriod = "";
+	dataItem.status = "";
+
+	// var settings = {
+	// 	"url": "http://localhost:7001/pears/PIPS/SaveBulkDtrRecord",
+	// 	"method": "POST",
+	// 	"timeout": 0,
+	// 	"headers": {
+	// 	  "Content-Type": "application/json"
+	// 	},
+	// 	"data": JSON.stringify({
+	// 	  "refNo": "212",
+	// 	  "dataFile": [
+	// 		{
+	// 		  "emp_id": 10008711,
+	// 		  "dateUploaded": "",
+	// 		  "startPeriod": "",
+	// 		  "endPeriod": "",
+	// 		  "time_in": "",
+	// 		  "terminal_in": 16,
+	// 		  "time_log": 5,
+	// 		  "date": "",
+	// 		  "exact_time": "9:57:12 PM"
+	// 		}
+	// 	  ],
+	// 	  "status": "1",
+	// 	  "dateUploaded": "",
+	// 	  "startPeriod": "",
+	// 	  "endPeriod": ""
+	// 	}),
+	//   };
+	  
+	//   $.ajax(settings).done(function (response) {
+	// 	console.log(response);
+	//   });
+
+
+
+	console.log(dataItem)
+	console.log(result)
 }
 
 
@@ -374,3 +431,33 @@ function generateTable() {
     // })
     // doc.save('auto_table_pdf');
 }
+
+
+function calculateTotalHours(checkInTimes, checkOutTimes) {
+    let totalHours = 0;
+
+    for (let i = 0; i < checkInTimes.length; i++) {
+        const checkIn = new Date(checkInTimes[i]);
+        const checkOut = new Date(checkOutTimes[i]);
+
+        // Calculate the time difference in milliseconds
+        const timeDifference = checkOut - checkIn;
+
+        // Convert the time difference to hours
+        const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+        // Add to the total hours
+        totalHours += hoursDifference;
+    }
+
+    return totalHours;
+}
+
+// Example check-in and check-out times
+const checkInTimes = ["2023-12-18T08:00:00", "2023-12-18T10:30:00", "2023-12-18T13:45:00"];
+const checkOutTimes = ["2023-12-18T10:15:00", "2023-12-18T12:45:00", "2023-12-18T16:30:00"];
+
+// Calculate total hours
+const totalHours = calculateTotalHours(checkInTimes, checkOutTimes);
+
+console.log("Total hours:", totalHours);

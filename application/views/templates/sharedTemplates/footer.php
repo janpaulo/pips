@@ -36,6 +36,7 @@
 <script src="<?php echo base_url();?>asset/js/mypfrofileAction.js?version=<?php echo rand(10,100); ?>"></script>
 <script src="<?php echo base_url();?>asset/js/dtr.js?version=<?php echo rand(10,100); ?>"></script>
 <script src="<?php echo base_url();?>asset/js/roleBase.js?version=<?php echo rand(10,100); ?>"></script>
+<script src="<?php echo base_url();?>asset/js/myprofileRecord.js?version=<?php echo rand(10,100); ?>"></script>
 
 <!-- jQuery UI 1.11.4 -->
 <script src="<?php echo base_url();?>asset/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -81,6 +82,9 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?php echo base_url();?>asset/dist/js/pages/dashboard.js"></script>
 
 
+
+<script src="<?php echo base_url();?>asset/js/xlsx_0175_xlsx.min.js"></script>
+<script src="<?php echo base_url();?>asset/js/jquery.validate.min.js"></script>
 
 
 <link rel="stylesheet" type="text/css" href=" https://printjs-4de6.kxcdn.com/print.min.css"> 

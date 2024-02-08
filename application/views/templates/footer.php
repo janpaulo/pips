@@ -29,6 +29,7 @@
 <script src="<?php echo base_url();?>asset/js/employee.js?version=<?php echo rand(10,100); ?>"></script>
 <script src="<?php echo base_url();?>asset/js/mypfrofileAction.js?version=<?php echo rand(10,100); ?>"></script>
 <script src="<?php echo base_url();?>asset/js/dtr.js?version=<?php echo rand(10,100); ?>"></script>
+<script src="<?php echo base_url();?>asset/js/myprofileRecord.js?version=<?php echo rand(10,100); ?>"></script>
 
 
 
