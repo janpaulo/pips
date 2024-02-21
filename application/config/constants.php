@@ -83,3 +83,13 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+define('TITLE', $title); //jab 2024-02-12
+define('SYSTEM_NAME', $system_name); //jab 2024-02-12
+define('FLAG', $flag); //jab 2024-02-12
+define('ERROR_REPORTING', $error_reporting); //jab 2024-02-12
+define('LIVE_URL', $live_url); //jab 2024-02-12
+define('VERSION', $version); //jab 2024-02-12
+
+define('PEARS_WS', $pears_ws); //jab 2024-02-12

@@ -53,7 +53,36 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
+
+ $ini_array = parse_ini_file('config.ini'); 
+
+$title = $ini_array['TITLE'];  //jab 2024-02-12
+$flag = $ini_array['FLAG'];  //jab 2024-02-12
+$system_name = $ini_array['NAME'];  //jab 2024-02-12
+$error_reporting = $ini_array['ERROR_REPORTING'];  //jab 2024-02-12
+$live_url = $ini_array['LIVE_URL'];  //jab 2024-02-12
+$version = $ini_array['VERSION']; //jab 2024-02-12
+
+// $systempath = $ini_array['SYSTEM'];  //jab 2024-02-12
+// $applicationpath = $ini_array['APPLICATION'];  //jab 2024-02-12
+
+$pears_ws = $ini_array['PEARS_WS']; 
+
+
+
+if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == 'localhost') {
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+}
+else if ($error_reporting == 'TRUE' || $flag == 'TEST') {
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'testing');
+}
+else {
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
+}
+
+
+
+	// define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
 /*
  *---------------------------------------------------------------

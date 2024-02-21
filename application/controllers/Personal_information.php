@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Work_experiences extends CI_Controller {
+class Personal_information  extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -38,16 +38,21 @@ class Work_experiences extends CI_Controller {
 	public function index()
 	{
 
-		$empID = $this->session->userdata('vUserID') ;
+		// $empID = $this->session->userdata('vUserID') ;
 		
-		$WorkExpList = $this->Myprofile_model->getWorkExp($empID);
-		$data['workExpList'] = $WorkExpList->result;
-		
+		// $Eliglist = $this->Myprofile_model->getEligibility($empID);
+		// $data['eligList'] = $Eliglist->result;
+
+		// $EligType = $this->Global_model->getEligibilityType();
+		// $data['eligTypes'] = $EligType->result;
+
+
+		// $this->load->view('login');
 		$this->load->view('templates/sharedTemplates/header');
 		$this->load->view('templates/sharedTemplates/sidebar');
 		// content view
-		$this->load->view('templates/myprofile/workExperience/index',$data);
-		$this->load->view('templates/myprofile/workExperience/form');
+		$this->load->view('templates/myprofile/personalInfo/index');
+		// $this->load->view('templates/myprofile/eligibility/form');
 		$this->load->view('templates/sharedTemplates/footer');
 	}
 }

@@ -1,6 +1,6 @@
 // for Create function
 function handleAddInfo(params) {
-	$("#modalAdd").modal("show");
+	$("#modalInfo").modal("show");
 
 	// Swal.fire({
 	//     position: 'top-center',
@@ -10,3 +10,40 @@ function handleAddInfo(params) {
 	//     //timer: 1500
 	//     })
 }
+// for Create function
+function handleAddWorkExp(params) {
+	$("#modalwork").modal("show");
+
+}
+
+// for Create function
+function handleAddVoluntary(params) {
+	$("#modalvol").modal("show");
+
+}
+// for Create function
+function handleAddTrain(params) {
+	$("#modaltrain").modal("show");
+
+}
+// for Create function
+function handleAddElig(params) {
+	$("#modalelig").modal("show");
+
+}
+// for Create function
+function handleAddEduc(params) {
+	$("#modaleduc").modal("show");
+
+}
+
+// for Create function
+function handleAddFam(params) {
+	$("#modalfamily").modal("show");
+
+}
+
+
+
+
+

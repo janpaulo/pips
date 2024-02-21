@@ -1,7 +1,7 @@
 <?php
 
 class Employees_model extends CI_Model {
-
+    private $pears_ws = PEARS_WS;
     
     public function getEmployees(){
         
@@ -28,8 +28,8 @@ class Employees_model extends CI_Model {
     
     public function searchEmployees($hrisID, $phicCode, $lname,  $fname){
         
-
-        $url = 'http://localhost:7001/pears/PIPS/SearchEmployee';
+        $url = $this->pears_ws."SearchEmployee";
+        // $url = 'http://localhost:7001/pears/PIPS/SearchEmployee';
 
         $curl = curl_init();
         

@@ -306,7 +306,6 @@ ul#myTab {
                                 <div><b>Details</b> </div>
                             </div>
                             <div class="card-body">
-                                NOTE: FOR THE LEVELS
 
                                 <table class="table table-hover" id="empTable">
 
