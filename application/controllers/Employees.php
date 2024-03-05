@@ -39,23 +39,22 @@ class Employees extends CI_Controller
 	public function index()
 	{
 
-
 		$hrisID = $this->input->post("hrisID");
 		$phicCode = $this->input->post("officeID");
 		$lname = $this->input->post("lname");
 		$fname = $this->input->post("fname");
+		$OfficeCode = "1";
+
+		$OFficeLibraries = $this->Global_model->getOFficeLibraries($OfficeCode);
+		$data['officeLibraries'] = $OFficeLibraries->result;
 
 		if ($hrisID != "" ||  $phicCode != "" || $lname != "" || $fname != "") {
 
-
 			$employeeSearchResult = $this->Employees_model->searchEmployees($hrisID, $phicCode, $lname,  $fname);
-			if ($employeeSearchResult->success) {
-				$data['getemployee'] = $employeeSearchResult;
-			} else {
-				$data['getemployee'] = json_decode('{"message" : "no record found", "success": false, "result": "[]"}');
-			}
+			$data['getemployee'] = $employeeSearchResult;
 		} else {
 			$data['getemployee'] = json_decode('{"message" : "no record found", "success": false, "result": "[]"}');
+			// $data['getemployee'] = $employeeSearchResult;
 		}
 
 

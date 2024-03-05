@@ -45,6 +45,12 @@ class Education extends CI_Controller {
 		$Educlevel = $this->Global_model->getEducationLevel();
 		$data['educLevel'] = $Educlevel->result;
     	
+
+		$HonorsList = $this->Global_model->getHonorsList();
+		$data['honorsList'] = $HonorsList->result;
+    	
+		$data['empID'] = $empID ;
+    	
 		
 		$this->load->view('templates/sharedTemplates/header');
 		$this->load->view('templates/sharedTemplates/sidebar');
@@ -52,5 +58,36 @@ class Education extends CI_Controller {
 		$this->load->view('templates/myprofile/education/index',$data);
 		$this->load->view('templates/myprofile/education/form', $data);
 		$this->load->view('templates/sharedTemplates/footer');
+	}
+
+	
+
+	public function create()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		// echo $dataNewOject;
+		$this->Myprofile_model->createEduc($dataNewOject);
+		
+	}
+
+
+	public function update()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		// echo $dataNewOject;
+		$this->Myprofile_model->updateEduc($dataNewOject);
+		
 	}
 }

@@ -31,39 +31,41 @@
                     <div class="row  align-items-end">
                         <div class="col-md-3">
                             <label for="hrisID"> HRIS NO</label>
-                            <input type="text" class="form-control" name="hrisID" id="hrisID" value="<?php echo $vHrisID;?>">
+                            <input type="number" class="form-control" name="hrisID" id="hrisID" 
+                                value="<?php echo $vHrisID;?>">
                         </div>
                         <div class="col-md-3">
                             <label for="hrisID"> Office</label>
-                            <select name="officeID" class="form-control"   id="officeID" >
-                                <option value="">ds</option>
-                                <option value="">as</option>
-                                <option value="">adaf</option>
-                                <option value="">fafwr</option>
-                                <option value="">dafar</option>
-
+                            <select id="inputState" class="form-control" name="typeid">
+                                <?php foreach(json_decode($officeLibraries) as $value) { ?>
+                                <option value="<?php echo $value->phicCode; ?>"><?php echo $value->officeName; ?>
+                                </option>
+                                <?php } ?>
 
                             </select>
                         </div>
                         <div class="col-md-2">
                             <label for="hrisID"> Last Name</label>
-                            <input type="text" class="form-control" name="lname" id="lname" value="<?php echo $vLname;?>">
+                            <input type="text" class="form-control" name="lname" id="lname"
+                                value="<?php echo $vLname;?>">
 
                         </div>
                         <div class="col-md-2">
                             <label for="hrisID"> First Name</label>
-                            <input type="text" class="form-control" name="fname" id="fname" value="<?php echo $vFname;?>">
+                            <input type="text" class="form-control" name="fname" id="fname"
+                                value="<?php echo $vFname;?>">
 
                         </div>
                         <div class="col-md-2 align-self-end text-center">
-                        <label for="hrisID"> &nbsp; &nbsp;  </label>
+                            <label for="hrisID"> &nbsp; &nbsp; </label>
                             <!-- <button type="button" class="btn btn-primary" onclick="handleUpdatse()">Search</button> -->
-                            <button type="submit"  class="btn btn-primary" >Search</button>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button  href="<?php echo base_url() ;?>" class="btn btn-warning">Clear</button>
 
                         </div>
                     </div>
-                    </form>
-                <hr/>
+                </form>
+                <hr />
 
                 <table class="table table-hover" id="empTable">
                     <thead>

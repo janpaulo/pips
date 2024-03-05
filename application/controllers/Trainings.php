@@ -20,11 +20,53 @@ class Trainings extends CI_Controller {
 	 */
 	public function index()
 	{
+
+		$TrainingType = $this->Global_model->getTrainingtyType();
+		$data['trainingTypes'] = $TrainingType->result;
+
 		// $this->load->view('login');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('welcome_message');
-		$this->load->view('templates/footer');
+		$this->load->view('templates/sharedTemplates/header');
+		// $this->load->view('templates/sharedTemplates/sidebar');
+		$this->load->view('templates/sharedTemplates/sidebar_start');
+		$this->load->view('templates/sharedTemplates/sidebar_emp_role');
+		$this->load->view('templates/sharedTemplates/sidebar_hr_role');
+		$this->load->view('templates/sharedTemplates/sidebar_end');
+		
+		// content view
+		$this->load->view('templates/settings/trainings/index',$data);
+		$this->load->view('templates/settings/trainings/form');
+		$this->load->view('templates/sharedTemplates/footer');
+		
+	}
+
+
+	
+	public function create()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		echo $dataNewOject;
+		// $this->Myprofile_model->createElgb($dataNewOject);
+		
+	}
+
+
+	public function update()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		echo $dataNewOject;
+		// $this->Myprofile_model->updateElgb($dataNewOject);
 		
 	}
 }

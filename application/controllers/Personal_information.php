@@ -38,21 +38,35 @@ class Personal_information  extends CI_Controller {
 	public function index()
 	{
 
-		// $empID = $this->session->userdata('vUserID') ;
-		
-		// $Eliglist = $this->Myprofile_model->getEligibility($empID);
-		// $data['eligList'] = $Eliglist->result;
+		$empID = $this->session->userdata('vUserID') ;
+	
+		$PersonalInfo = $this->Myprofile_model->getPersonalInfo($empID);
+		$data['personalInfo'] =json_decode( $PersonalInfo->result);
 
-		// $EligType = $this->Global_model->getEligibilityType();
-		// $data['eligTypes'] = $EligType->result;
+		$TitlesList = $this->Global_model->getTitlesList();
+		$data['titlesList'] = $TitlesList->result;
+
+		$PositionList = $this->Global_model->getPositionList();
+		$data['positionList'] = $PositionList->result;
 
 
 		// $this->load->view('login');
 		$this->load->view('templates/sharedTemplates/header');
 		$this->load->view('templates/sharedTemplates/sidebar');
 		// content view
-		$this->load->view('templates/myprofile/personalInfo/index');
+		$this->load->view('templates/myprofile/personalInfo/index', $data);
 		// $this->load->view('templates/myprofile/eligibility/form');
 		$this->load->view('templates/sharedTemplates/footer');
+	}
+
+	public function update()
+	{
+		
+		// $Data = file_get_contents('php://input');
+		$Data = json_encode(file_get_contents('php://input'), true);
+		echo stripslashes($Data) ;
+		
+		// $phicCode = ($_POST["data"]);
+		// print_r($phicCode);
 	}
 }

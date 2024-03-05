@@ -43,11 +43,42 @@ class Work_experiences extends CI_Controller {
 		$WorkExpList = $this->Myprofile_model->getWorkExp($empID);
 		$data['workExpList'] = $WorkExpList->result;
 		
+		$data['empID'] = $empID ;
+		
 		$this->load->view('templates/sharedTemplates/header');
 		$this->load->view('templates/sharedTemplates/sidebar');
 		// content view
 		$this->load->view('templates/myprofile/workExperience/index',$data);
 		$this->load->view('templates/myprofile/workExperience/form');
 		$this->load->view('templates/sharedTemplates/footer');
+	}
+
+	public function create()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		// echo $dataNewOject;
+		$this->Myprofile_model->createWorkExp($dataNewOject);
+		
+	}
+
+
+	public function update()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		// echo $dataNewOject;
+		$this->Myprofile_model->updateWorkExp($dataNewOject);
+		
 	}
 }

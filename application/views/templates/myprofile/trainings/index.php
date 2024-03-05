@@ -25,22 +25,29 @@
                             <th scope="col">Training is External? </th>
                             <th scope="col">Training is Internal? </th>
                             <th scope="col">Requirement is submited? </th>
+                            <th scope="col">For HR Validate</th>
                             <th scope="col" class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach(json_decode($trainingList) as $new) { ?>
+
+                        <?php foreach(json_decode($trainingList) as $value) { ?>
                         <tr>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
-                            <td><?php print_r($new);?></td>
+                            <td><?php print_r($value->titleName);?></td>
+                            <td><?php print_r($value->trainingTypeName);?></td>
+                            <!-- <td><?php print_r($value->trainingTypeID);?></td> -->
+                            <td><?php print_r(date( 'Y/m/d', strtotime($value->startDate))) ;?></td>
+                            <td><?php print_r(date( 'Y/m/d', strtotime($value->endDate))) ;?></td>
+                            <td><?php print_r($value->conductedBy);?></td>
+                            <td><?php print_r(($value->isCertGiven == 0 ? "NO" : ( $value->isCertGiven === "1" ?  "YES":"") )) ;?></td>
+                            <td><?php print_r(($value->isCertValid == 0 ? "NO" : ( $value->isCertValid === "1" ?  "YES":"") )) ;?></td>
+                            <td><?php print_r(($value->isExternal == 0 ? "NO" : ( $value->isExternal === "1" ?  "YES":"") )) ;?></td>
+                            <td><?php print_r(($value->isInternal == 0 ? "NO" : ( $value->isInternal === "1" ?  "YES":"") )) ;?></td>
+                            <td><?php print_r(($value->isSubmitReq == 0 ? "NO" : ( $value->isSubmitReq === "1" ?  "YES":"") )) ;?></td>
+                            <td><?php print_r(($value->forUpdate == 0 ? "Aproved" : ( $value->forUpdate === "1" ?  "Pending":( $value->forUpdate === 2 ?  "Cancelled":"")) )) ;?></td>
+                            <td><button class="btn btn-primary"
+                                    onclick="editTrain('<?php echo urlencode(json_encode($value)); ?>')">Edit</button>
+                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>

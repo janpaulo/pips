@@ -47,11 +47,42 @@ class Other_info extends CI_Controller {
 		$SkillTypes = $this->Global_model->getSkillTypes();
 		$data['skillTypes'] = $SkillTypes->result;
 		
+		$data['empID'] = $empID ;
+		
 		$this->load->view('templates/sharedTemplates/header');
 		$this->load->view('templates/sharedTemplates/sidebar');
 		// content view
 		$this->load->view('templates/myprofile/otherInfo/index', $data);
 		$this->load->view('templates/myprofile/otherInfo/form', $data);
 		$this->load->view('templates/sharedTemplates/footer');
+	}
+
+	public function create()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		// echo $dataNewOject;
+		$this->Myprofile_model->createOther($dataNewOject);
+		
+	}
+
+
+	public function update()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		// echo $dataNewOject;
+		$this->Myprofile_model->updateOther($dataNewOject);
+		
 	}
 }

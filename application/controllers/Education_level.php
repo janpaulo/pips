@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Family_Background extends CI_Controller {
+class Education_level extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,8 +19,7 @@ class Family_Background extends CI_Controller {
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
 
-	 
-	public function __construct()
+	 public function __construct()
 	{
 		parent::__construct();
 
@@ -35,30 +34,23 @@ class Family_Background extends CI_Controller {
 			echo '<script> parent.window.location=\'' . base_url() . 'login' . '\';</script>';
 		}
 	}
-
-	
 	
 	public function index()
 	{
-		$empID = $this->session->userdata('vUserID') ;
-		
-		$familyList = $this->Myprofile_model->getFamilyList($empID);
-		$data['familyList'] = $familyList->result;
+		// $this->load->view('login');
 
-		$familyType = $this->Global_model->getFamilyTypesList();
-		$data['familyTypes'] = $familyType->result;
 
-		$data['empID'] = $empID ;
-    	
+		$Educlevel = $this->Global_model->getEducationLevel();
+		$data['educLevel'] = $Educlevel->result;
+
+
 		$this->load->view('templates/sharedTemplates/header');
 		$this->load->view('templates/sharedTemplates/sidebar');
 		// content view
-		$this->load->view('templates/myprofile/familyBackground/index', $data);
-		$this->load->view('templates/myprofile/familyBackground/form', $data);
+		$this->load->view('templates/settings/educational_level/index',$data);
+		$this->load->view('templates/settings/educational_level/form');
 		$this->load->view('templates/sharedTemplates/footer');
-		
 	}
-
 	
 	public function create()
 	{
@@ -69,7 +61,8 @@ class Family_Background extends CI_Controller {
 		// parse to single qoutes
 		$newstring = str_replace('"{', '{', $dataOject);
 		$dataNewOject = str_replace('}"', '}', $newstring);
-		$this->Myprofile_model->createFamily($dataNewOject);
+		echo $dataNewOject;
+		// $this->Myprofile_model->createElgb($dataNewOject);
 		
 	}
 
@@ -83,9 +76,8 @@ class Family_Background extends CI_Controller {
 		// parse to single qoutes
 		$newstring = str_replace('"{', '{', $dataOject);
 		$dataNewOject = str_replace('}"', '}', $newstring);
-		$this->Myprofile_model->updateFamily($dataNewOject);
+		echo $dataNewOject;
+		// $this->Myprofile_model->updateElgb($dataNewOject);
 		
 	}
-
-
 }

@@ -21,9 +21,46 @@ class Eligibilities extends CI_Controller {
 	public function index()
 	{
 		// $this->load->view('login');
-		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('templates/settings/eligibility_types/index');
-		$this->load->view('templates/footer');
+		
+
+		$EligType = $this->Global_model->getEligibilityType();
+		$data['eligTypes'] = $EligType->result;
+
+
+		$this->load->view('templates/sharedTemplates/header');
+		$this->load->view('templates/sharedTemplates/sidebar');
+		// content view
+		$this->load->view('templates/settings/eligibility_types/index',$data);
+		$this->load->view('templates/settings/eligibility_types/form');
+		$this->load->view('templates/sharedTemplates/footer');
+	}
+	
+	public function create()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		echo $dataNewOject;
+		// $this->Myprofile_model->createElgb($dataNewOject);
+		
+	}
+
+
+	public function update()
+	{
+		
+		$Data = json_encode(file_get_contents('php://input'), true);
+		$dataOject=  stripslashes($Data) ;
+
+		// parse to single qoutes
+		$newstring = str_replace('"{', '{', $dataOject);
+		$dataNewOject = str_replace('}"', '}', $newstring);
+		echo $dataNewOject;
+		// $this->Myprofile_model->updateElgb($dataNewOject);
+		
 	}
 }

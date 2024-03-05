@@ -172,14 +172,14 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item" id="adminRole-dtr">
+                <!-- <li class="nav-item" id="adminRole-dtr">
                     <a href="<?php echo base_url();?>dtrs" class="nav-link">
                         <i class="nav-icon fas fa-columns"></i>
                         <p>
                             DTR Uploader
                         </p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item" id="adminRole-settings">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-cogs"></i>
@@ -189,7 +189,7 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="<?php echo base_url();?>banks" class="nav-link"> <i
                                     class="far fa-circle nav-icon"></i>
                                 <p> Banks</p>
@@ -212,7 +212,7 @@
                                     class="far fa-circle nav-icon"></i>
                                 <p> Plantilia</p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="<?php echo base_url();?>eligibilities" class="nav-link"> <i
                                     class="far fa-circle nav-icon"></i>
@@ -220,6 +220,24 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="<?php echo base_url();?>titles" class="nav-link"> <i
+                                    class="far fa-circle nav-icon"></i>
+                                <p> Titles Types</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url();?>education_level" class="nav-link"> <i
+                                    class="far fa-circle nav-icon"></i>
+                                <p> Education Level</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url();?>skilltypes" class="nav-link"> <i
+                                    class="far fa-circle nav-icon"></i>
+                                <p> Skill Types</p>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
                             <a href="<?php echo base_url();?>loans" class="nav-link"> <i
                                     class="far fa-circle nav-icon"></i>
                                 <p> Loans</p>
@@ -242,14 +260,14 @@
                                     class="far fa-circle nav-icon"></i>
                                 <p> Tax Table</p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="<?php echo base_url();?>trainings" class="nav-link"> <i
                                     class="far fa-circle nav-icon"></i>
-                                <p> Trainings</p>
+                                <p> Training Types</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="<?php echo base_url();?>employees" class="nav-link"> <i
                                     class="far fa-circle nav-icon"></i>
                                 <p> Permission</p>
@@ -260,13 +278,13 @@
                                     class="far fa-circle nav-icon"></i>
                                 <p> UI Reports</p>
                             </a>
-                        </li>
+                        </li> -->
 
                     </ul>
                 </li>
 
                 <!-- human resource -->
-                <li class="nav-item" id="adminRole-hr">
+                <!-- <li class="nav-item" id="adminRole-hr">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
@@ -312,7 +330,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
             </ul>
         </nav>

@@ -26,9 +26,15 @@ class Login_model extends CI_Model {
             curl_close($curl);
 
             if(json_decode($response)->success != ''){
+                $dataResult = json_decode($response)->result;
+
                 $userInfo = $this->session->all_userdata();
                 $userInfo['vUserID'] = $username;
                 $userInfo['vUserPassword'] = $password;
+                $userInfo['vRoleID'] = json_decode($dataResult)->roleID;
+                $userInfo['vRoleDesc'] = json_decode($dataResult)->roleDesc;
+
+                // print_r(json_decode($dataResult));
 
                 echo $response;
                 $this->session->set_userdata($userInfo);

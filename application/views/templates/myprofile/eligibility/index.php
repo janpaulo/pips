@@ -21,13 +21,24 @@
                             <th scope="col">License Validity Date</th>
                             <th scope="col">Type</th>
                             <th scope="col">Rating</th>
+                            <th scope="col">For HR Validate</th>
                             <th scope="col" class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach(json_decode($eligList) as $new) { ?>
+
+                        <?php foreach(json_decode($eligList) as $value) { ?>
                         <tr>
-                            <td><?php print_r($new);?></td>
+                            <td><?php print_r(date( 'Y/m/d', strtotime($value->elgDateExam))) ;?></td>
+                            <td><?php print_r($value->elgCityExam);?></td>
+                            <td><?php print_r($value->elgLicenseNo);?></td>
+                            <td><?php print_r(date( 'Y/m/d', strtotime($value->elgLicenseValDate)));?></td>
+                            <td><?php print_r($value->elgtName);?></td>
+                            <td><?php print_r($value->elgRating);?></td>
+                            <td><?php print_r(($value->forUpdate == 0 ? "Aproved" : ( $value->forUpdate === "1" ?  "Pending":( $value->forUpdate === 2 ?  "Cancelled":"")) )) ;?></td>
+                            <td><button class="btn btn-primary"
+                                    onclick="editElgb('<?php echo urlencode(json_encode($value)); ?>')">Edit</button>
+                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>
